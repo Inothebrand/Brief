@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RDV L'Instant Glow — Ines Ouajib</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --white: #FFFFFF;
+    --ink: #111111;
+    --cherry: #8B0435;
+    --cherry-light: rgba(139,4,53,0.07);
+    --cherry-mid: rgba(139,4,53,0.13);
+    --cherry-border: rgba(139,4,53,0.18);
+    --border: #E5E0DA;
+    --border-dark: #C8C0B8;
+    --muted: #7A746E;
+    --muted-light: #A8A29C;
+    --green: #5A8A5E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Mulish', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding-bottom: 5rem;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-top { background: var(--cherry); height: 4px; width: 100%; }
+  .header-inner {
+    padding: 2.5rem 2rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .logo-area { flex-shrink: 0; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; }
+  .logo-svg { width: 70px; height: 70px; object-fit: contain; display: block; }
+  .header-text { flex: 1; }
+  .header-eyebrow {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cherry);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  h1 em { color: var(--cherry); font-style: italic; font-weight: 400; }
+  .header-sub {
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.76rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .header-contact {
+    margin-top: 0.7rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem 0;
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 400;
+  }
+  .header-contact a { color: var(--cherry); text-decoration: none; font-weight: 500; }
+  .contact-sep { color: var(--border-dark); margin: 0 0.5rem; font-size: 0.7rem; }
+
+  /* ── FICHE RAPIDE (info-bar style) ── */
+  .info-bar-outer {
+    background: var(--cherry-light);
+    border-bottom: 1px solid var(--cherry-border);
+  }
+  .info-bar-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .info-field { display: flex; align-items: center; gap: 0.6rem; flex: 1; min-width: 160px; }
+  .info-label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cherry);
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .info-value {
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.8rem;
+    color: var(--ink);
+    font-weight: 500;
+    flex: 1;
+  }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* ── SECTION BLOCK ── */
+  .section-block { margin-bottom: 2rem; }
+
+  .sec-head {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.2rem;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-num {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--cherry-mid);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    flex-shrink: 0;
+  }
+  .sec-meta { flex: 1; }
+  .sec-tag {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cherry);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .sec-title {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── NOTE ── */
+  .note {
+    background: var(--cherry-light);
+    border-left: 3px solid var(--cherry);
+    border-radius: 0 8px 8px 0;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--ink);
+    line-height: 1.65;
+    font-weight: 400;
+  }
+  .note strong { color: var(--cherry); font-weight: 600; }
+
+  /* ── QUESTION CARD ── */
+  .question {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 0.9rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .question::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--border);
+  }
+  .question.insight-card::before { background: var(--cherry); }
+  .question.note-card::before { background: var(--green); }
+
+  .q-row { display: flex; gap: 0.8rem; align-items: flex-start; margin-bottom: 0.8rem; }
+  .q-num {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--cherry);
+    letter-spacing: 0.1em;
+    min-width: 22px;
+    padding-top: 3px;
+  }
+  .q-body { flex: 1; }
+  .q-text {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 0.2rem;
+  }
+  .q-tag {
+    display: inline-block;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cherry);
+    border: 1px solid var(--cherry-border);
+    border-radius: 3px;
+    padding: 0.1rem 0.35rem;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    font-weight: 700;
+  }
+  .q-tag.green {
+    color: var(--green);
+    border-color: rgba(90,138,94,0.3);
+  }
+  .q-hint {
+    font-size: 0.74rem;
+    color: var(--muted);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0.7rem;
+  }
+  .q-insight {
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .q-insight strong { color: var(--cherry); font-weight: 600; }
+
+  /* ── CHIPS ── */
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
+  .chip {
+    padding: 0.28rem 0.85rem;
+    border-radius: 20px;
+    border: 1.5px solid var(--cherry-border);
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.74rem;
+    color: var(--cherry);
+    font-weight: 500;
+    background: var(--cherry-light);
+  }
+  .chip.green-chip {
+    color: var(--green);
+    border-color: rgba(90,138,94,0.3);
+    background: rgba(90,138,94,0.07);
+  }
+
+  /* ── BLANK LINES ── */
+  .blank-line {
+    border: none;
+    border-bottom: 1px dotted var(--border-dark);
+    height: 28px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  /* ── OBJECTION GRID ── */
+  .obj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+  .obj-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .obj-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--cherry);
+  }
+  .obj-title {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--cherry);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .obj-title::before { content: '⚡'; font-size: 0.85rem; }
+  .obj-reponse {
+    font-size: 0.78rem;
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 300;
+    font-style: italic;
+    padding-left: 1.1rem;
+  }
+
+  /* ── POSTURE GRID ── */
+  .posture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+  .posture-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .posture-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0;
+    height: 3px;
+    background: var(--cherry);
+  }
+  .phase {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cherry);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    margin-top: 0.3rem;
+  }
+  .phase-title {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+  .posture-card ul { list-style: none; }
+  .posture-card ul li {
+    font-size: 0.76rem;
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 300;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .posture-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--cherry); font-size: 0.7rem; }
+
+  /* ── OFFRES ── */
+  .offre-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+  .offre-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem 1.3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .offre-card.highlight {
+    background: var(--cherry);
+    border-color: var(--cherry);
+  }
+  .offre-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0;
+    height: 3px;
+    background: var(--border-dark);
+  }
+  .offre-card.highlight::before { background: rgba(255,255,255,0.3); }
+  .badge-offre {
+    display: inline-block;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--white);
+    color: var(--cherry);
+    border-radius: 20px;
+    padding: 0.15rem 0.6rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  .offre-name {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cherry);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+  }
+  .offre-card.highlight .offre-name { color: var(--white); }
+  .offre-price {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .offre-card.highlight .offre-price { color: rgba(255,255,255,0.7); }
+  .offre-card ul { list-style: none; text-align: left; }
+  .offre-card ul li {
+    font-size: 0.74rem;
+    color: var(--muted);
+    line-height: 1.9;
+    font-weight: 300;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .offre-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--cherry); font-weight: 700; }
+  .offre-card.highlight ul li { color: rgba(255,255,255,0.8); }
+  .offre-card.highlight ul li::before { color: rgba(255,255,255,0.6); }
+
+  /* ── PHRASE CARD ── */
+  .phrase-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 0.9rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .phrase-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--green);
+  }
+  .phrase-title {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+  .phrase-item {
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-style: italic;
+  }
+  .phrase-item:last-child { border-bottom: none; }
+  .phrase-item strong { font-style: normal; color: var(--cherry); font-weight: 600; }
+
+  /* ── PRINT BTN ── */
+  .print-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--cherry);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(139,4,53,0.3);
+  }
+  .print-btn:hover { background: #6E0329; }
+
+  /* ── PRINT ── */
+  @media print {
+    .print-btn { display: none !important; }
+    body { background: white; }
+    .section-block { page-break-inside: avoid; }
+    .obj-grid, .posture-grid, .offre-grid { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .obj-grid { grid-template-columns: 1fr; }
+    .posture-grid { grid-template-columns: 1fr; }
+    .offre-grid { grid-template-columns: 1fr; }
+    .header-inner { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">↓ Imprimer</button>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top"></div>
+  <div class="header-inner">
+    <div class="logo-area">
+      <img src="https://raw.githubusercontent.com/Inothebrand/Onboarding/refs/heads/main/logo.svg" alt="Logo Ines Ouajib" class="logo-svg">
+    </div>
+    <div class="header-text">
+      <div class="header-eyebrow">Ines Ouajib &middot; Community Management</div>
+      <h1>Préparer mon <em>RDV</em></h1>
+      <p class="header-sub">L'Instant Glow &middot; Institut de beauté &middot; Prévessin-Moëns</p>
+      <div class="header-contact">
+        <a href="mailto:ines.ouajib@outlook.fr">ines.ouajib@outlook.fr</a>
+        <span class="contact-sep">&middot;</span>
+        <a href="tel:+33624307765">+336 24 30 77 65</a>
+        <span class="contact-sep">&middot;</span>
+        <a href="https://inesouajib.my.canva.site/projets" target="_blank">Mes projets</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FICHE CLIENT -->
+<div class="info-bar-outer">
+  <div class="info-bar-inner">
+    <div class="info-field">
+      <span class="info-label">Client</span>
+      <span class="info-value">L'Instant Glow — Siham</span>
+    </div>
+    <div class="info-field">
+      <span class="info-label">Secteur</span>
+      <span class="info-value">Institut de beauté & bien-être</span>
+    </div>
+    <div class="info-field">
+      <span class="info-label">Localisation</span>
+      <span class="info-value">Prévessin-Moëns, 01280</span>
+    </div>
+    <div class="info-field">
+      <span class="info-label">Note Planity</span>
+      <span class="info-value">⭐ 5.0 — 36 avis</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ━━━━━ CE QUE TU SAIS DÉJÀ ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">◎</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Recherche préalable</div>
+        <div class="sec-title">Ce que tu sais déjà</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>Montre que tu t'es préparée.</strong> Mentionner ces éléments dès l'intro du RDV installe la confiance et te positionne comme une vraie professionnelle, pas quelqu'un qui découvre la marque sur place.</div>
+
+    <div class="question insight-card">
+      <div class="q-row">
+        <div class="q-num">→</div>
+        <div class="q-body">
+          <div class="q-text">Services phares <span class="q-tag green">Connu</span></div>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Extensions de cils</span>
+        <span class="chip">Brow lift</span>
+        <span class="chip">Drainage lymphatique</span>
+        <span class="chip">Madérothérapie</span>
+        <span class="chip">Spray tan</span>
+        <span class="chip">Soins visage</span>
+        <span class="chip">Ongles (gel, semi)</span>
+        <span class="chip">Blanchiment dentaire</span>
+        <span class="chip">Massages corps</span>
+      </div>
+    </div>
+
+    <div class="question insight-card">
+      <div class="q-row">
+        <div class="q-num">→</div>
+        <div class="q-body">
+          <div class="q-text">Équipe <span class="q-tag green">Connu</span></div>
+        </div>
+      </div>
+      <div class="q-insight"><strong>Siham</strong> — fondatrice, esthéticienne (extensions, brow lift, ongles) &nbsp;·&nbsp; <strong>Sana</strong> — drainage lymphatique & madérothérapie &nbsp;·&nbsp; <strong>Sefora</strong> &nbsp;·&nbsp; <strong>Lilou</strong></div>
+    </div>
+
+    <div class="question insight-card">
+      <div class="q-row">
+        <div class="q-num">→</div>
+        <div class="q-body">
+          <div class="q-text">Angle contenu stratégique <span class="q-tag">Opportunité</span></div>
+          <div class="q-hint">Tous les avis récents sur Planity citent Sana et ses soins corps — c'est le moteur de croissance.</div>
+        </div>
+      </div>
+      <div class="q-insight">Le drainage lymphatique et la madérothérapie font régulièrement <strong>500k–2M vues sur TikTok</strong>. Ces soins sont visuels, spectaculaires, pédagogiques. <strong>Sana peut devenir une référence locale.</strong> C'est ton argument TikTok béton.</div>
+    </div>
+
+    <div class="question insight-card">
+      <div class="q-row">
+        <div class="q-num">→</div>
+        <div class="q-body">
+          <div class="q-text">Positionnement prix & zone <span class="q-tag green">Connu</span></div>
+        </div>
+      </div>
+      <div class="q-insight">Tarifs milieu de gamme (massages 45–95€, extensions 65–90€, madéro 70–120€, packs 600€). <strong>Zone frontière franco-suisse</strong> = clientèle genevoise potentielle à fort pouvoir d'achat. Fort levier de croissance inexploité.</div>
+    </div>
+  </div>
+
+  <!-- ━━━━━ SECTION 01 : MARQUE ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Identité</div>
+        <div class="sec-title">La marque & son univers</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>Objectif :</strong> Comprendre l'ADN pour construire un tone of voice juste. Ces réponses deviennent ta ligne éditoriale. <strong>Écoute, note, reformule.</strong></div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q1</div>
+        <div class="q-body">
+          <div class="q-text">Décrivez votre marque en 3 mots. <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Ces 3 mots guideront tout le ton de ta communication. Si elle dit "pro, chaleureux, résultats" → ton expert mais proche. Si "élégant, féminin, luxe" → ton aspirationnel.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q2</div>
+        <div class="q-body">
+          <div class="q-text">Quelle est l'histoire de la marque ? Quand, par qui, pourquoi ?</div>
+          <div class="q-hint">Creuse : pourquoi ce nom "L'Instant Glow" ? Quel déclic pour ouvrir l'institut ?</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q3</div>
+        <div class="q-body">
+          <div class="q-text">Quelles sont vos valeurs fondamentales ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Hypothèse à valider : bienveillance, résultats visibles, professionnalisme, mise en confiance (sources : avis Planity).</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q5–6</div>
+        <div class="q-body">
+          <div class="q-text">Concurrents & inspirations communication ?</div>
+          <div class="q-hint">Zone Pays de Gex / Genève. Creuse : veut-elle attirer des clientes suisses ? Des marques dont elle aime la com ?</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+  </div>
+
+  <!-- ━━━━━ SECTION 02 : AUDIENCE ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Cible</div>
+        <div class="sec-title">Audience cible</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>Un contenu pour tout le monde ne touche personne.</strong> Valide tes hypothèses plutôt que d'imposer ton analyse.</div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q7</div>
+        <div class="q-body">
+          <div class="q-text">Profil de votre cliente idéale ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Hypothèse : femmes 25–45 ans, CSP+, zone frontière suisse, attentives à leur image, résultats et bien-être.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q8</div>
+        <div class="q-body">
+          <div class="q-text">Où est géographiquement la clientèle ?</div>
+          <div class="q-hint">À creuser : clientèle uniquement française (01) ou aussi genevoise ? Si suisse → immense levier de croissance.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q10</div>
+        <div class="q-body">
+          <div class="q-text">Pourquoi vos clientes vous choisissent-elles ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Les avis Planity disent : "résultats visibles", "mise en confiance", "professionnalisme". Elle vend une transformation, pas juste un soin.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+  </div>
+
+  <!-- ━━━━━ SECTION 03 : RÉSEAUX ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Plateformes</div>
+        <div class="sec-title">Présence sur les réseaux</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>État des lieux avant stratégie.</strong> Ne jamais partir de zéro sans savoir ce qui a été fait.</div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q12–13</div>
+        <div class="q-body">
+          <div class="q-text">Sur quels réseaux êtes-vous ? Qui gère aujourd'hui ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Cherche leur compte Instagram avant le RDV. Combien d'abonnés ? Fréquence ? C'est souvent là que le besoin naît — elle est débordée.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q14</div>
+        <div class="q-body">
+          <div class="q-text">Des publications qui ont particulièrement bien fonctionné ?</div>
+          <div class="q-hint">Dans la beauté : avant/après, tutoriels, résultats immédiats cartonnent. A-t-elle déjà filmé des soins ? Si non → opportunité immédiate.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q15</div>
+        <div class="q-body">
+          <div class="q-text">Sur quels réseaux concentrer nos efforts ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Ta recommandation naturelle : <strong>Instagram</strong> (visuel beauté, 25–45 ans) + <strong>TikTok</strong> si ok vidéo. Max 2 plateformes pour commencer.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+  </div>
+
+  <!-- ━━━━━ SECTION 04 : CONTENU ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Éditorial</div>
+        <div class="sec-title">Contenu & identité visuelle</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>Cadrer l'univers graphique et éditorial</strong> pour une ligne cohérente dès le premier post.</div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q16</div>
+        <div class="q-body">
+          <div class="q-text">Charte graphique existante ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Si non ou partielle → opportunité de proposer un service complémentaire (création d'univers visuel).</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q17</div>
+        <div class="q-body">
+          <div class="q-text">Ressources visuelles disponibles ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Si peu → intègre un budget shooting. Les soins comme le drainage sont très filmables : propose du contenu natif dans l'espace.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q18</div>
+        <div class="q-body">
+          <div class="q-text">Ton idéal de communication ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Hypothèse : "Chaleureux & proche" + "Expert & informatif". Évite le "luxe froid" qui éloignerait sa clientèle de proximité.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q20</div>
+        <div class="q-body">
+          <div class="q-text">Événements, dates clés à intégrer dans le planning ?</div>
+          <div class="q-hint">Pense à : rentrée (sept), fêtes (déc), Saint-Valentin, été (spray tan, jambes), Black Friday, anniversaire de l'institut.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+  </div>
+
+  <!-- ━━━━━ SECTION 05 : OBJECTIFS ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Résultats</div>
+        <div class="sec-title">Objectifs & attentes</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>Aligner les attentes dès le départ.</strong> La Q22 révèle les vraies priorités — parfois différentes de Q21. Laisse-lui le temps de répondre.</div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q21</div>
+        <div class="q-body">
+          <div class="q-text">Objectif principal sur les réseaux ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Pour un institut 5/5 sur Planity : probable que c'est remplir le carnet de RDV (nouveaux clients) + vendre les packs (drainage 6 séances à 600€).</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q22</div>
+        <div class="q-body">
+          <div class="q-text">Dans 6 mois, comment saurez-vous que la collaboration a été un succès ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Laisse-lui le temps de répondre. Ne coupe pas. Reformule ce qu'elle dit.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q24</div>
+        <div class="q-body">
+          <div class="q-text">Avez-vous déjà travaillé avec un(e) CM ?</div>
+          <div class="q-hint">Si mauvaise expérience → écoute sans défendre. Montre en quoi ta méthode est différente (brief, validation, reporting, contact direct).</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+  </div>
+
+  <!-- ━━━━━ SECTION 06 : PRATIQUE ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Organisation</div>
+        <div class="sec-title">Aspects pratiques & budget</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>Aborder le budget avec confiance</strong> — c'est une conversation normale et nécessaire. "Je pose la question pour proposer ce qui correspond à votre situation, pas un package standard."</div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q25</div>
+        <div class="q-body">
+          <div class="q-text">Budget mensuel dédié aux réseaux ? <span class="q-tag">Clé</span></div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q27</div>
+        <div class="q-body">
+          <div class="q-text">Comment valider le contenu avant publication ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Recommande : <strong>validation du planning mensuel</strong> (pas post par post). Période de rodage les 2 premiers mois si besoin de rassurance.</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+
+    <div class="question">
+      <div class="q-row">
+        <div class="q-num">Q29</div>
+        <div class="q-body">
+          <div class="q-text">Quand démarrer ? Horizon de collaboration ? <span class="q-tag">Clé</span></div>
+          <div class="q-hint">Recommande un <strong>engagement 3 mois minimum</strong>. Argument : "Les algorithmes récompensent la régularité — 3 mois pour construire quelque chose de solide."</div>
+        </div>
+      </div>
+      <span class="blank-line"></span>
+    </div>
+  </div>
+
+  <!-- ━━━━━ OBJECTIONS ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">⚡</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Anticipation</div>
+        <div class="sec-title">Gérer les objections</div>
+      </div>
+    </div>
+    <div class="obj-grid">
+
+      <div class="obj-card">
+        <div class="obj-title">"C'est trop cher"</div>
+        <div class="obj-reponse">"Ramenons ça à ce que ça vous coûte de ne pas y être. À 90€ la pose d'extensions, 5 nouvelles clientes via Instagram c'est déjà 450€ — bien au-delà de mon tarif."</div>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-title">"Je peux le faire moi-même"</div>
+        <div class="obj-reponse">"Vous le pouvez. La vraie question : est-ce le meilleur usage de votre temps ? Votre valeur est dans l'espace avec vos clientes, pas derrière un écran à trouver les bons hashtags."</div>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-title">"Mauvaise expérience passée"</div>
+        <div class="obj-reponse">"Je veux comprendre ce qui s'est mal passé. Ce que je propose c'est différent : travail en direct, planning validé ensemble, contact facile — vous ne disparaissez pas dans une agence."</div>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-title">"Je veux réfléchir"</div>
+        <div class="obj-reponse">"Bien sûr. Je vous envoie la proposition dans 48h. Je peux aussi vous préparer quelques idées de contenu à titre indicatif pour que vous visualisiez concrètement ce qu'on créerait."</div>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-title">"Pas assez de contenu visuel"</div>
+        <div class="obj-reponse">"C'est précisément pour ça que vous avez besoin de moi. Le drainage ou la madéro sont ultra filmables. Quelques courtes vidéos in situ suffisent à lancer quelque chose de fort."</div>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-title">"On verra dans quelques mois"</div>
+        <div class="obj-reponse">"Vos concurrentes construisent leur communauté maintenant. L'algorithme favorise la régularité dans le temps. Commencer aujourd'hui, c'est avoir une longueur d'avance."</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ━━━━━ OFFRES ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">💼</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Proposition</div>
+        <div class="sec-title">Tes formules</div>
+      </div>
+    </div>
+    <div class="note">💡 <strong>À compléter avec tes vrais tarifs avant le RDV.</strong> Présente les formules en fin de réunion seulement, après avoir bien compris ses besoins.</div>
+    <div class="offre-grid">
+
+      <div class="offre-card">
+        <div class="offre-name">Essentiel</div>
+        <div class="offre-price">À définir / mois</div>
+        <ul>
+          <li>Stratégie éditoriale</li>
+          <li>Planning mensuel</li>
+          <li>Posts Instagram</li>
+          <li>Rédaction des captions</li>
+          <li>Reporting mensuel</li>
+        </ul>
+      </div>
+
+      <div class="offre-card highlight">
+        <div class="badge-offre">Recommandé</div>
+        <div class="offre-name">Signature</div>
+        <div class="offre-price">À définir / mois</div>
+        <ul>
+          <li>Tout Essentiel +</li>
+          <li>Stories & Reels stratégiques</li>
+          <li>Community management</li>
+          <li>2 plateformes (Insta + TikTok)</li>
+          <li>Brief visuel mensuel</li>
+        </ul>
+      </div>
+
+      <div class="offre-card">
+        <div class="offre-name">Premium</div>
+        <div class="offre-price">À définir / mois</div>
+        <ul>
+          <li>Tout Signature +</li>
+          <li>Shooting contenu</li>
+          <li>Publicité payante (ads)</li>
+          <li>Stratégie growth</li>
+          <li>Point hebdomadaire</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ━━━━━ POSTURE RDV ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">🎯</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Déroulé</div>
+        <div class="sec-title">Posture & déroulé du RDV</div>
+      </div>
+    </div>
+    <div class="posture-grid">
+
+      <div class="posture-card">
+        <div class="phase">Phase 1 · 0–10 min</div>
+        <div class="phase-title">Accueil & ancrage</div>
+        <ul>
+          <li>Remercier pour le temps accordé</li>
+          <li>Te présenter en 2 min max</li>
+          <li>Montrer que tu t'es préparée (Planity, avis)</li>
+          <li>"Votre note de 5/5 est remarquable"</li>
+        </ul>
+      </div>
+
+      <div class="posture-card">
+        <div class="phase">Phase 2 · 10–40 min</div>
+        <div class="phase-title">Écoute & brief</div>
+        <ul>
+          <li>80% écoute / 20% questions</li>
+          <li>Prendre des notes visibles</li>
+          <li>Reformuler régulièrement</li>
+          <li>Ne pas vendre — juste comprendre</li>
+          <li>Suivre les 6 sections</li>
+        </ul>
+      </div>
+
+      <div class="posture-card">
+        <div class="phase">Phase 3 · 40–60 min</div>
+        <div class="phase-title">Proposition & closing</div>
+        <ul>
+          <li>Synthétiser ce que tu as compris</li>
+          <li>Donner 2–3 idées concrètes</li>
+          <li>Présenter tes formules sans pression</li>
+          <li>"Proposition dans 48h"</li>
+          <li>Ne pas réduire le prix sur place</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-title">💎 Phrases à avoir en tête</div>
+      <div class="phrase-item"><strong>"Votre 5/5 sur Planity est une preuve sociale magnifique — on va la faire rayonner."</strong></div>
+      <div class="phrase-item">Les soins comme le drainage ou la madéro sont faits pour être vus — ils sont cinématiques.</div>
+      <div class="phrase-item">Je ne poste pas pour poster — chaque publication a un objectif clair.</div>
+      <div class="phrase-item">On commence par 2 réseaux, on fait ça très bien, et on scale si ça cartonne.</div>
+      <div class="phrase-item">Votre valeur est dans l'espace avec vos clientes — pas derrière un écran.</div>
+    </div>
+  </div>
+
+  <!-- ━━━━━ NOTES LIBRES ━━━━━ -->
+  <div class="section-block">
+    <div class="sec-head">
+      <div class="sec-num">📝</div>
+      <div class="sec-meta">
+        <div class="sec-tag">Sur place</div>
+        <div class="sec-title">Notes libres</div>
+      </div>
+    </div>
+    <div class="question">
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+      <span class="blank-line"></span>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
